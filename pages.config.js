@@ -2,21 +2,27 @@ import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
 import { appName, primaryColor } from './src/settings/index.mjs'
 
 export default defineUniPages({
+  // easycom 组件自动引入配置
   easycom: {
+    // 是否自动扫描组件
     autoscan: true,
+    // 自定义组件匹配规则
     custom: {
+      // wot-design-uni 组件库的匹配规则，例如 wd-button 会自动引入对应组件
       '^wd-(.*)': 'wot-design-uni/components/wd-$1/wd-$1.vue',
+      // z-paging 分页组件的匹配规则，排除 refresh 和 load-more 子组件
       '^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)': 'z-paging/components/z-paging$1/z-paging$1.vue',
     },
   },
+  // 主包页面配置
   pages: [
     {
-      path: 'pages/index/index',
-      aliasPath: '/index',
-      name: 'index',
+      path: 'pages/index/index', // 页面路径
+      aliasPath: '/index', // 路由别名，可以通过 /index 访问
+      name: 'index', // 页面名称，用于路由跳转
       style: {
-        navigationStyle: 'custom',
-        navigationBarTitleText: '主页',
+        navigationStyle: 'custom', // 导航栏样式：custom 表示自定义导航栏
+        navigationBarTitleText: '主页', // 导航栏标题文字
       },
     },
     {
@@ -47,9 +53,10 @@ export default defineUniPages({
       },
     },
   ],
+  // 分包配置，用于优化小程序包体积
   subPackages: [
     {
-      root: 'pages/common',
+      root: 'pages/common', // 分包根目录
       pages: [
         {
           path: 'web-view/index',
@@ -57,7 +64,7 @@ export default defineUniPages({
           name: 'web-view',
           style: {
             navigationBarTitleText: 'web-view',
-            transparentTitle: 'auto',
+            transparentTitle: 'auto', // 导航栏透明设置：auto 表示滑动自动显示/隐藏
           },
         },
         {
@@ -78,7 +85,7 @@ export default defineUniPages({
           aliasPath: '/tips-middleware',
           name: 'tips-middleware',
           meta: {
-            middleware: ['test'],
+            middleware: ['test'], // 页面级中间件配置，指定该页面需要执行的中间件
           },
           style: {
             navigationBarTitleText: '中间件',
@@ -95,6 +102,22 @@ export default defineUniPages({
           name: 'template-paging',
           style: {
             navigationBarTitleText: '通用列表',
+          },
+        },
+        {
+          path: 'table/index',
+          aliasPath: '/template-table',
+          name: 'template-table',
+          style: {
+            navigationBarTitleText: '表单提交',
+          },
+        },
+        {
+          path: 'typewriter/index',
+          aliasPath: '/template-typewriter',
+          name: 'template-typewriter',
+          style: {
+            navigationBarTitleText: '打字机效果',
           },
         },
       ],
@@ -155,16 +178,17 @@ export default defineUniPages({
       ],
     },
   ],
+  // 底部 TabBar 配置
   tabBar: {
-    color: '#999999',
-    selectedColor: primaryColor,
-    backgroundColor: '#FFFFFF',
+    color: '#999999', // 未选中时的文字颜色
+    selectedColor: primaryColor, // 选中时的文字颜色
+    backgroundColor: '#FFFFFF', // TabBar 背景色
     list: [
       {
-        iconPath: 'static/images/tabbar/home.png',
-        selectedIconPath: 'static/images/tabbar/home-active.png',
-        pagePath: 'pages/index/index',
-        text: '主页',
+        iconPath: 'static/images/tabbar/home.png', // 未选中时的图标路径
+        selectedIconPath: 'static/images/tabbar/home-active.png', // 选中时的图标路径
+        pagePath: 'pages/index/index', // 页面路径
+        text: '主页', // TabBar 按钮文字
       },
       {
         iconPath: 'static/images/tabbar/example.png',
@@ -180,10 +204,11 @@ export default defineUniPages({
       },
     ],
   },
+  // 全局样式配置，应用于所有页面
   globalStyle: {
-    navigationBarTitleText: appName,
-    navigationBarBackgroundColor: '#FFFFFF',
-    navigationBarTextStyle: 'black',
-    backgroundColor: '#F8F8F8',
+    navigationBarTitleText: appName, // 导航栏标题文字
+    navigationBarBackgroundColor: '#FFFFFF', // 导航栏背景颜色
+    navigationBarTextStyle: 'black', // 导航栏标题颜色，仅支持 black/white
+    backgroundColor: '#F8F8F8', // 窗口的背景色
   },
 })

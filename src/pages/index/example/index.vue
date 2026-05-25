@@ -18,6 +18,16 @@ const tabModel = [
         text: '通用列表',
         path: '/pages/template/paging/index',
       },
+      {
+        icon: 'i-carbon-list',
+        text: '表单',
+        path: '/pages/template/table/index',
+      },
+      {
+        icon: 'i-carbon-text-font',
+        text: '打字机',
+        path: '/pages/template/typewriter/index',
+      },
     ],
   },
 ]

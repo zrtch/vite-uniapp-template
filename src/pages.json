@@ -96,6 +96,22 @@
           "style": {
             "navigationBarTitleText": "通用列表"
           }
+        },
+        {
+          "path": "table/index",
+          "aliasPath": "/template-table",
+          "name": "template-table",
+          "style": {
+            "navigationBarTitleText": "表单提交"
+          }
+        },
+        {
+          "path": "typewriter/index",
+          "aliasPath": "/template-typewriter",
+          "name": "template-typewriter",
+          "style": {
+            "navigationBarTitleText": "打字机效果"
+          }
         }
       ]
     },

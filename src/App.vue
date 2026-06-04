@@ -2,11 +2,14 @@
 // #ifdef WEB
 import { updateShades } from '$unocss-preset-shades'
 // #endif
+import { resetImmersiveStatusBar } from '@/utils/status-bar'
 
 onLaunch(() => {
+  resetImmersiveStatusBar()
   console.log('App Launch')
 })
 onShow(() => {
+  resetImmersiveStatusBar()
   console.log('App Show')
 })
 onHide(() => {

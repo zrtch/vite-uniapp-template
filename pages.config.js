@@ -113,6 +113,22 @@ export default defineUniPages({
           },
         },
         {
+          path: 'map/index',
+          aliasPath: '/template-map',
+          name: 'template-map',
+          style: {
+            navigationBarTitleText: '地图服务',
+          },
+        },
+        {
+          path: 'app-capability/index',
+          aliasPath: '/template-app-capability',
+          name: 'template-app-capability',
+          style: {
+            navigationBarTitleText: 'App 能力',
+          },
+        },
+        {
           path: 'typewriter/index',
           aliasPath: '/template-typewriter',
           name: 'template-typewriter',

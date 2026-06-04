@@ -79,6 +79,7 @@ async function handleLogout() {
 
 <template>
   <view class="h-full flex flex-col">
+    <view class="fixed left-0 right-0 top-0 z-50 h-[--safe-top] bg-primary-500"></view>
     <view
       class="relative overflow-hidden"
     >

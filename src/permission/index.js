@@ -1,4 +1,5 @@
 import { defineMiddleware } from '$uni-router'
+import { resetImmersiveStatusBar } from '@/utils/status-bar'
 import login from './login/index.js'
 import test from './test/index.js'
 
@@ -6,4 +7,8 @@ import test from './test/index.js'
 export default function permission(router) {
   login(router)
   defineMiddleware('test', test, { router })
+
+  router.afterEach(() => {
+    resetImmersiveStatusBar()
+  })
 }

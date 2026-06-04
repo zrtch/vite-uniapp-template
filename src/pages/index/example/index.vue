@@ -24,6 +24,16 @@ const tabModel = [
         path: '/pages/template/table/index',
       },
       {
+        icon: 'i-carbon-map',
+        text: '地图服务',
+        path: '/pages/template/map/index',
+      },
+      {
+        icon: 'i-carbon-mobile',
+        text: 'App 能力',
+        path: '/pages/template/app-capability/index',
+      },
+      {
         icon: 'i-carbon-text-font',
         text: '打字机',
         path: '/pages/template/typewriter/index',
@@ -42,6 +52,7 @@ const activeTabItem = computed(() => tabModel[tabIndex.value].children)
 
 <template>
   <view class="h-full flex flex-col overflow-hidden">
+    <view class="fixed left-0 right-0 top-0 z-50 h-[--safe-top] bg-white"></view>
     <view class="h-[--safe-top] flex-none uni-mp:mt-4"></view>
 
     <view class="flex flex-none bg-white px-3 py-2 !uni-mp:pr-[var(--safe-right)]">

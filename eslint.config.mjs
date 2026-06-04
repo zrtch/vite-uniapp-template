@@ -24,6 +24,7 @@ export default antfu({
   },
   rules: {
     'node/prefer-global/process': 'off',
+    'style/operator-linebreak': 'off',
 
     'unused-imports/no-unused-vars': 'off',
     'no-console': 'off',
